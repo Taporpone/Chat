@@ -1,0 +1,45 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "Chat app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taporpone/Chat.git"
+  },
+  "keywords": [
+    "react",
+    "node",
+    "express",
+    "sockets"
+  ],
+  "author": "Taporpone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Taporpone/Chat/issues"
+  },
+  "homepage": "https://github.com/Taporpone/Chat#readme",
+  "dependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.4.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "css-loader": "^0.26.4",
+    "express": "^4.15.2",
+    "html-webpack-plugin": "^2.28.0",
+    "optimize-js-plugin": "0.0.4",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-hot-loader": "^1.3.1",
+    "socket.io": "^1.7.3",
+    "socket.io-client": "^1.7.3",
+    "style-loader": "^0.13.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  }
+}
