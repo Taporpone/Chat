@@ -5,7 +5,6 @@
     justify-content: flex-start;
     flex-direction: column;
     background-color: #525C91;
-    
 }
 
 .UsersOnline {
@@ -13,12 +12,16 @@
     text-align: center;
     background-color: #313B74;
     color:white;
+    border-left: 1px solid #7C84AE;
 }
 
 .UsersList {
     margin: 0;
     padding: 0;
     background-color: #525C91;
+    border-top: 1px solid #7C84AE;
+    border-right: 1px solid #7C84AE;
+
 }
 
 .UserItem {

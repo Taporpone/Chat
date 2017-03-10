@@ -8,7 +8,7 @@ class UserForm extends Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        if (this.state.name === '' || this.state.name.length >= 20) {
+        if (this.state.name === '' || this.state.name.length >= 20 || !this.state.name.match(/^[a-zA-Z0-9]+$/)) {
             this.setState({ emptyName: true });
         } else {
             this.props.onUserSubmit(this.state.name);
@@ -27,7 +27,7 @@ class UserForm extends Component {
                     onChange={e => this.handleChange(e)}
                     value={this.state.name}
                 />
-                <p className={styles.EmptyName}>{this.state.emptyName ? 'Nick must be 1 - 20 chars long' : ''}</p>
+                <p className={styles.EmptyName}>{this.state.emptyName ? 'Nick must be 1 - 20 chars long and consist of only letter and/or numbers' : ''}</p>
             </form>
         )
     }

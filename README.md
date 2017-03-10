@@ -11,7 +11,7 @@ WebChat written in React on Express.js backend.
 ## Changelog
 
 * 10/03/17
-  * Added GitHub Icon
-  * Username initial verification - name got to be [1-20] in length.
+  * Added GitHub icon/link
+  * Username initial verification - name got to be [1-20] in length and consist of alphanum chars
 * 09/03/17
   * Init

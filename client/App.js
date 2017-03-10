@@ -45,7 +45,7 @@ class App extends Component {
             <div className={styles.App}>
                 <div className={styles.AppHeader}>
                     <div className={styles.AppTitle}>
-                        Chat App
+                        <img src="img/react.png" />
                     </div>
                     <div className={styles.AppRoom}>
                         Welcome to React Chat :)

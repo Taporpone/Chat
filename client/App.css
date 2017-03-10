@@ -12,8 +12,7 @@ body {
 .AppHeader {
     display: flex;
     flex-direction: row;
-    align-items: center;
-   
+    align-items: center;  
 }
 
 .AppTitle {
@@ -25,6 +24,11 @@ body {
     background-color: #525C91;
     color:white;
     font-weight: bold;
+    height: 100%;
+}
+
+.AppTitle img {
+    object-fit: contain;
 }
 
 .AppRoom {
