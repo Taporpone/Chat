@@ -2,26 +2,32 @@ import React, { Component } from 'react';
 import styles from './UserForm.css';
 
 class UserForm extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {name: ''};
+        this.state = { name: '', emptyName: false };
     }
-    handleSubmit(e){
+    handleSubmit(e) {
         e.preventDefault();
-        this.props.onUserSubmit(this.state.name);
+        if (this.state.name === '' || this.state.name.length >= 20) {
+            this.setState({ emptyName: true });
+        } else {
+            this.props.onUserSubmit(this.state.name);
+        }
+
     }
     handleChange(e) {
         this.setState({ name: e.target.value });
     }
     render() {
-        return(
+        return (
             <form className={styles.UserForm} onSubmit={e => this.handleSubmit(e)}>
-                <input 
+                <input
                     className={styles.UserInput}
-                    placeholder='Write your nickname and press enter!'
+                    placeholder='Choose your nickname'
                     onChange={e => this.handleChange(e)}
                     value={this.state.name}
                 />
+                <p className={styles.EmptyName}>{this.state.emptyName ? 'Nick must be 1 - 20 chars long' : ''}</p>
             </form>
         )
     }

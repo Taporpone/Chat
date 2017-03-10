@@ -1,15 +1,25 @@
 .UserForm {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    background-color:#313B74;
+    color:white;
 }
 
 .UserInput {
     padding: 20px;
     font-size: 2em;
-    border: 0;
-    border-bottom: 1px solid #ccc;
+    border: 1px solid #7C84AE;
     width: 510px;
+    color:white;
+    background-color: #525C91;
+    text-align: center;
+}
+
+.EmptyName{
+    font-size: 2em;
+    color: red;
 }

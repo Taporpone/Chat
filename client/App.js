@@ -50,6 +50,9 @@ class App extends Component {
                     <div className={styles.AppRoom}>
                         Welcome to React Chat :)
                     </div>
+                    <div className={styles.GitIcon}>
+                        <a href="https://github.com/Taporpone/Chat"><img src="img/git.png"/></a>
+                    </div>
                 </div>
                 <div className={styles.AppBody}>
                     <UsersList

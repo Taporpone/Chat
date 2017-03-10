@@ -1,7 +1,7 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 var OptimizeJsPlugin = require('optimize-js-plugin');
-var env = process.env.NODE_ENV || 'development';
+var env = 'production';
 var path = require('path');
 
 var config = {
