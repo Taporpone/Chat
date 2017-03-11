@@ -3,11 +3,14 @@
     width: 20vw;
     justify-content: center;
     box-sizing: border-box;
-    padding: 20px;
     background-color: #AA3939;
     color:white;
     font-weight: bold;
     height: 100%;
+}
+
+.AppTitle img {
+    max-height: 100%;
 }
 
 .AppRoom {
@@ -22,6 +25,14 @@
 }
 
 .GitIcon {
-    max-height: 100%;
+    display: flex;
+    width: 10vw;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100%;
     background-color: #AA3939;
+}
+
+.GitIcon img {
+    max-height: 100%;
 }
