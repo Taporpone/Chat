@@ -1,10 +1,14 @@
-.UserForm {
+.Welcome {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    background-color:#313B74;
+}
+
+.UserForm {
     background-color:#313B74;
     color:white;
 }
@@ -20,6 +24,64 @@
 }
 
 .EmptyName{
-    font-size: 2em;
+    font-size: 1.5em;
     color: #9EE493;
+}
+
+.ThemesTitle{
+   color: #7C84AE;
+   font-size: 2em;
+}
+
+.Themes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ThemeBlue {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: #313B74;
+    border: 1px solid #7C84AE;
+}
+
+.ThemeBlueSelected {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #7C84AE;
+    background-color: #313B74;
+}
+
+.ThemeRed {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: #AA3939;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.ThemeRedSelected {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #7C84AE;
+    background-color: #AA3939;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.ThemeGreen {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: #338A2E;
+}
+
+.ThemeGreenSelected {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #7C84AE;
+    background-color: #338A2E;
 }

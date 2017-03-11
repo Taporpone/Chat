@@ -1,0 +1,8 @@
+.MessageInput {
+    flex: 1;
+    padding: 20px;
+    border: 0;
+    border-top: 1px solid #8DCF8A;
+    background-color: #338A2E;
+    color: white;
+}

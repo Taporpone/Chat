@@ -1,0 +1,33 @@
+.Users {
+    display: flex;
+    flex: 1;
+    width: 25vw;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: #338A2E;
+}
+
+.UsersOnline {
+    padding: 20px;
+    text-align: center;
+    background-color: #156711;
+    color:white;
+    border-left: 1px solid #8DCF8A;
+}
+
+.UsersList {
+    margin: 0;
+    padding: 0;
+    background-color: #338A2E;
+    border-top: 1px solid #8DCF8A;
+    border-right: 1px solid #8DCF8A;
+
+}
+
+.UserItem {
+    list-style: none;
+    padding: 20px;
+    margin: 0 0 0 20px;
+    color: white;
+    border-bottom: 1px solid #8DCF8A;
+}

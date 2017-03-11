@@ -1,0 +1,27 @@
+.AppTitle {
+    display: flex;
+    width: 20vw;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #AA3939;
+    color:white;
+    font-weight: bold;
+    height: 100%;
+}
+
+.AppRoom {
+    display: flex;
+    width: 70vw;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #AA3939;
+    color:white;
+    font-weight: bold;
+}
+
+.GitIcon {
+    max-height: 100%;
+    background-color: #AA3939;
+}

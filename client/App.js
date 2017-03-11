@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
 const socket = io('/');
+
 import styles from './App.css';
+import stylesRed from './AppRed.css';
+import stylesGreen from './AppGreen.css';
+
 import MessageForm from './MessageForm';
 import MessageList from './MessageList';
 import UsersList from './UsersList';
@@ -15,6 +19,7 @@ class App extends Component {
             messages: [],
             text: '',
             name: '',
+            theme: '',
         };
     }
     componentDidMount() {
@@ -33,8 +38,8 @@ class App extends Component {
         this.setState({ messages });
         socket.emit('message', message);
     }
-    handleUserSubmit(name) {
-        this.setState({ name });
+    handleUserSubmit(name,theme) {
+        this.setState({ name:name, theme:theme });
         socket.emit('join', name);
     }
     render() {
@@ -44,27 +49,30 @@ class App extends Component {
         return (
             <div className={styles.App}>
                 <div className={styles.AppHeader}>
-                    <div className={styles.AppTitle}>
+                    <div className={this.state.theme === 'red' ? stylesRed.AppTitle : (this.state.theme === 'green' ? stylesGreen.AppTitle : styles.AppTitle)}>
                         <img src="img/react.png" />
                     </div>
-                    <div className={styles.AppRoom}>
+                    <div className={this.state.theme === 'red' ? stylesRed.AppRoom : (this.state.theme === 'green' ? stylesGreen.AppRoom : styles.AppRoom)}>
                         Welcome to React Chat :)
                     </div>
-                    <div className={styles.GitIcon}>
+                    <div className={this.state.theme === 'red' ? stylesRed.GitIcon : (this.state.theme === 'green' ? stylesGreen.GitIcon : styles.GitIcon)}>
                         <a href="https://github.com/Taporpone/Chat"><img src="img/git.png"/></a>
                     </div>
                 </div>
                 <div className={styles.AppBody}>
                     <UsersList
                         users={this.state.users}
+                        theme={this.state.theme}
                     />
                     <div className={styles.MessageWrapper}>
                         <MessageList
-                            messages={this.state.messages} 
+                            messages={this.state.messages}
+                            theme={this.state.theme}
                         />
                         <MessageForm
                             onMessageSubmit={message => this.handleMessageSubmit(message)}
                             name={this.state.name}
+                            theme={this.state.theme}
                         />
                     </div>
                 </div>
@@ -73,7 +81,7 @@ class App extends Component {
         )
     }
     renderUserForm() {
-        return (<UserForm onUserSubmit={name => this.handleUserSubmit(name)} />);
+        return (<UserForm onUserSubmit={(name,theme) => this.handleUserSubmit(name,theme)} />);
     }
 };
 
