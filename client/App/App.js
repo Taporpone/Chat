@@ -6,10 +6,13 @@ import styles from './App.css';
 import stylesRed from './AppRed.css';
 import stylesGreen from './AppGreen.css';
 
-import MessageForm from './MessageForm';
-import MessageList from './MessageList';
-import UsersList from './UsersList';
-import UserForm from './UserForm.js';
+import MessageForm from '../MessageForm/MessageForm';
+import MessageList from '../MessageList/MessageList';
+import UsersList from '../UsersList/UsersList';
+import UserForm from '../UserForm/UserForm';
+
+import gitIcon from 'file-loader!../assets/img/git.png';
+import webChatBaner from 'file-loader!../assets/img/react.png';
 
 class App extends Component {
     constructor(props) {
@@ -38,9 +41,15 @@ class App extends Component {
         this.setState({ messages });
         socket.emit('message', message);
     }
-    handleUserSubmit(name,theme) {
-        this.setState({ name:name, theme:theme });
+    handleUserSubmit(name, theme) {
+        this.setState({ name: name, theme: theme });
         socket.emit('join', name);
+    }
+    pickTheme() {
+        switch (this.state.theme) {
+            default:
+                return styles.AppTitle
+        }
     }
     render() {
         return this.state.name !== '' ? this.renderLayout() : this.renderUserForm();
@@ -50,13 +59,13 @@ class App extends Component {
             <div className={styles.App}>
                 <div className={styles.AppHeader}>
                     <div className={this.state.theme === 'red' ? stylesRed.AppTitle : (this.state.theme === 'green' ? stylesGreen.AppTitle : styles.AppTitle)}>
-                        <img src="img/react.png" />
+                        <img src={webChatBaner} />
                     </div>
                     <div className={this.state.theme === 'red' ? stylesRed.AppRoom : (this.state.theme === 'green' ? stylesGreen.AppRoom : styles.AppRoom)}>
                         Welcome to React Chat :)
                     </div>
                     <div className={this.state.theme === 'red' ? stylesRed.GitIcon : (this.state.theme === 'green' ? stylesGreen.GitIcon : styles.GitIcon)}>
-                        <a href="https://github.com/Taporpone/Chat"><img src="img/git.png"/></a>
+                        <a href="https://github.com/Taporpone/Chat"><img src={gitIcon} /></a>
                     </div>
                 </div>
                 <div className={styles.AppBody}>
@@ -81,7 +90,7 @@ class App extends Component {
         )
     }
     renderUserForm() {
-        return (<UserForm onUserSubmit={(name,theme) => this.handleUserSubmit(name,theme)} />);
+        return (<UserForm onUserSubmit={(name, theme) => this.handleUserSubmit(name, theme)} />);
     }
 };
 
