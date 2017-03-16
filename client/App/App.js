@@ -45,12 +45,6 @@ class App extends Component {
         this.setState({ name: name, theme: theme });
         socket.emit('join', name);
     }
-    pickTheme() {
-        switch (this.state.theme) {
-            default:
-                return styles.AppTitle
-        }
-    }
     render() {
         return this.state.name !== '' ? this.renderLayout() : this.renderUserForm();
     }
